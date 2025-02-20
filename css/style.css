@@ -206,11 +206,125 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 54px;
+  padding: 54pxs;
+  font-weight: 600;
+}
+.services h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  font-size: 34px;
+}
+.services p {
+  text-align: center;
+  line-height: 150%;
+  max-width: 800px;
+  margin-bottom: 14px;
 }
 
 .haircuts {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 0 44px 34px 44px;
+}
+
+.haircut-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+.haircut-item img {
+  width: 100%;
+  max-width: 354px;
+  transition: transform 0.2s;
+}
+
+.haircut-item img:hover {
+  transform: scale(1.2);
+  /* z-index serve como camadas de photoshop */
+  z-index: 1;
+}
+
+.haircut-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background-color: #fff;
+  z-index: 2;
+}
+.haircut-info button {
+  color: #fff;
+  background-color: #d94140;
+  border: 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  /* estilo do cursor */
+  cursor: default;
+}
+
+@media screen and (max-width: 580px) {
+  .haircuts {
+    margin-top: 14px;
+    flex-direction: column;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 0;
+  gap: 24px;
+  color: #fff;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 8px;
+  color: #fff;
+}
+
+.btn-whats {
+  position: fixed;
+  bottom: 14px;
+  right: 24px;
+  z-index: 99;
+}
+.btn-whats img {
+  max-width: 44px;
+  transition: transform 0.4s;
+}
+
+.btn-whats img:hover {
+  transform: scale(1.1);
+}
+
+.btn-whats .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  top: -5px;
+  left: -144px;
+  background-color: #232224;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+
+.btn-whats:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 body {

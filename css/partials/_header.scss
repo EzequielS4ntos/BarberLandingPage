@@ -1,0 +1,84 @@
+header{
+    width: 100%;
+}
+
+$proporcao-mobile: 580px;
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+i{
+    color: $white-normal;
+}
+
+.header-icons{
+    display: flex;
+    /* gap é o espaçamento entre os elementos */
+    gap: 14px;
+}
+
+@keyframes translateY{
+    from{
+        transform: translateY(0) scale(1);
+    }
+
+    to{
+        /* sobe e fica maior */
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+.header-icons a:hover{
+    i{
+        /* forwards faz com que a animação fique no seu estado final depois de ativada, infinite fica fazendo ela se repetir */
+        animation: translateY 0.8s forwards;
+        color: $red-light;
+    }
+}
+
+.header-button{
+    border: 1px solid $white-normal;
+    padding: 8px 24px;
+    border-radius: 4px;
+    color: $white-normal;
+    background-color: transparent;
+    /* transition funciona como se fosse uma animação */
+    transition: background-color 0.8s;
+}
+
+.header-button:hover{
+    background-color: $red-light;
+    border-color: $red-light;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+/* Mobile */
+@media screen and (max-width: $proporcao-mobile){
+    .header-content{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-button{
+        display: none;
+    }
+
+    i{
+        margin-top: 16px;
+        font-size: 34px;
+    }
+
+    .header-logo{
+        width: 160px;
+        margin-top: 46px;
+    }
+}
